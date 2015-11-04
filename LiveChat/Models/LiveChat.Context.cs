@@ -68,7 +68,7 @@ namespace LiveChat.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LC_Msg>("sp_LC_SearchMsg", msgIDParameter);
         }
     
-        public virtual ObjectResult<sp_LC_UserValid_CallCentre_Result> sp_LC_UserValid_CallCentre(string userName, string passWord)
+        public virtual ObjectResult<LC_User> sp_LC_UserValid_CallCentre(string userName, string passWord)
         {
             var userNameParameter = userName != null ?
                 new ObjectParameter("UserName", userName) :
@@ -78,7 +78,7 @@ namespace LiveChat.Models
                 new ObjectParameter("PassWord", passWord) :
                 new ObjectParameter("PassWord", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_LC_UserValid_CallCentre_Result>("sp_LC_UserValid_CallCentre", userNameParameter, passWordParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LC_User>("sp_LC_UserValid_CallCentre", userNameParameter, passWordParameter);
         }
     
         public virtual ObjectResult<sp_LC_UserValidate_Result> sp_LC_UserValidate(string userName, string passWord)

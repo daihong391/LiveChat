@@ -1,0 +1,22 @@
+﻿@model LiveChat.Models.User
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_WorkerLayout.cshtml";
+}
+
+<div id="Worker-Login-Panel">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <p>
+            <label>Username</label>
+            @Html.TextBoxFor(m => m.UserName)
+        </p>
+        <p>
+            <label>Password</label>
+            @Html.TextBoxFor(m => m.Password)
+        </p>
+        <input type="submit" value="Login" />
+    }
+</div>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LiveChatModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LiveChatModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="LiveChatModelStoreContainer">
           <EntitySet Name="LC_Msg" EntityType="LiveChatModel.Store.LC_Msg" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="LC_User" EntityType="LiveChatModel.Store.LC_User" store:Type="Tables" Schema="dbo" />
@@ -51,8 +51,7 @@
           <Parameter Name="UserName" Type="nvarchar" Mode="In" />
           <Parameter Name="PassWord" Type="nvarchar" Mode="In" />
         </Function>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LiveChatModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -60,15 +59,15 @@
           <EntitySet Name="LC_Msg" EntityType="LiveChatModel.LC_Msg" />
           <EntitySet Name="LC_User" EntityType="LiveChatModel.LC_User" />
           <FunctionImport Name="sp_LC_FindUser" EntitySet="LC_User" ReturnType="Collection(LiveChatModel.LC_User)">
-            <Parameter Name="UserID" Mode="In" Type="String" />
+          <Parameter Name="UserID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_LC_GenID" ReturnType="Collection(String)" />
           <FunctionImport Name="sp_LC_GenUserID" ReturnType="Collection(String)" />
           <FunctionImport Name="sp_LC_SearchActiveMsg" EntitySet="LC_Msg" ReturnType="Collection(LiveChatModel.LC_Msg)">
-            <Parameter Name="Status" Mode="In" Type="String" />
+          <Parameter Name="Status" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_LC_SearchMsg" EntitySet="LC_Msg" ReturnType="Collection(LiveChatModel.LC_Msg)">
-            <Parameter Name="MsgID" Mode="In" Type="String" />
+          <Parameter Name="MsgID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_LC_UserValid_CallCentre" EntitySet="LC_User" ReturnType="Collection(LiveChatModel.LC_User)">
             <Parameter Name="UserName" Mode="In" Type="String" />

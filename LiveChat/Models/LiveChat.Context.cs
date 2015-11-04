@@ -59,13 +59,13 @@ namespace LiveChat.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_LC_SearchActiveMsg_Result>("sp_LC_SearchActiveMsg", statusParameter);
         }
     
-        public virtual ObjectResult<sp_LC_SearchMsg_Result> sp_LC_SearchMsg(string msgID)
+        public virtual ObjectResult<LC_Msg> sp_LC_SearchMsg(string msgID)
         {
             var msgIDParameter = msgID != null ?
                 new ObjectParameter("MsgID", msgID) :
                 new ObjectParameter("MsgID", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_LC_SearchMsg_Result>("sp_LC_SearchMsg", msgIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LC_Msg>("sp_LC_SearchMsg", msgIDParameter);
         }
     
         public virtual ObjectResult<sp_LC_UserValid_CallCentre_Result> sp_LC_UserValid_CallCentre(string userName, string passWord)

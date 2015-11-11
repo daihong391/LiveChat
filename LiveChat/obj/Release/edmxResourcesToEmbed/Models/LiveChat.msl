@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LiveChatModelStoreContainer" CdmEntityContainer="LiveChatEntities">
+    <EntitySetMapping Name="LC_Msg">
+      <EntityTypeMapping TypeName="LiveChatModel.LC_Msg">
+        <MappingFragment StoreEntitySet="LC_Msg">
+          <ScalarProperty Name="MsgID" ColumnName="MsgID" />
+          <ScalarProperty Name="MsgContent" ColumnName="MsgContent" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PostTime" ColumnName="PostTime" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="LName" ColumnName="LName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LC_User">
+      <EntityTypeMapping TypeName="LiveChatModel.LC_User">
+        <MappingFragment StoreEntitySet="LC_User">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserLevel" ColumnName="UserLevel" />
+          <ScalarProperty Name="Dept" ColumnName="Dept" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_LC_FindUser" FunctionName="LiveChatModel.Store.sp_LC_FindUser" />
+    <FunctionImportMapping FunctionImportName="sp_LC_GenID" FunctionName="LiveChatModel.Store.sp_LC_GenID" />
+    <FunctionImportMapping FunctionImportName="sp_LC_GenUserID" FunctionName="LiveChatModel.Store.sp_LC_GenUserID" />
+    <FunctionImportMapping FunctionImportName="sp_LC_SearchActiveMsg" FunctionName="LiveChatModel.Store.sp_LC_SearchActiveMsg" />
+    <FunctionImportMapping FunctionImportName="sp_LC_SearchMsg" FunctionName="LiveChatModel.Store.sp_LC_SearchMsg" />
+    <FunctionImportMapping FunctionImportName="sp_LC_UserValid_CallCentre" FunctionName="LiveChatModel.Store.sp_LC_UserValid_CallCentre" />
+    <FunctionImportMapping FunctionImportName="sp_LC_UserValidate" FunctionName="LiveChatModel.Store.sp_LC_UserValidate" />
+  </EntityContainerMapping>
+</Mapping>

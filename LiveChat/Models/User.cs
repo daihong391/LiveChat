@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
+using LiveChat.Models;
 
 namespace LiveChat.Models
 {
@@ -23,26 +25,5 @@ namespace LiveChat.Models
 
         public string Status { get; set; }
 
-        public LC_User UserValid(){
-
-            List<LC_User> userList = new List<LC_User>();
-            LC_User user = new LC_User();
-
-            using (LiveChatEntities db = new LiveChatEntities())
-            {
-                userList = db.sp_LC_UserValid_CallCentre(UserName, Password).ToList();
-
-                if (userList.Any())
-                {
-                    user = userList.First();
-                }
-                else
-                {
-                    user = null;
-                }
-            }
-
-            return user;
-        }
     }
 }

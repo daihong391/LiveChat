@@ -1,0 +1,42 @@
+﻿@model LiveChat.Models.User
+@using LiveChat.Models
+
+@{
+    ViewBag.Title = "Console";
+    Layout = "~/Views/Shared/_WorkerLayout.cshtml";
+    List<LC_Msg> msgList = ViewBag.msgList;
+}
+
+<div id="Console-Header">
+    <span>Console</span>
+
+    <div id="UserInfo">
+        <p>
+            Hello, @Model.UserName
+        </p>
+        <p>
+            @Html.ActionLink("Index", "Index")
+        </p>
+    </div>
+</div>
+
+<div id="Consolee-Body">
+
+    <div id="WorkingArea"></div>
+
+    <div id="MsgList">
+        <ul>
+            @foreach (var msg in msgList)
+            {
+                <li class="ActMsg">@msg.MsgID</li>
+            }
+        </ul>
+    </div>
+
+</div>
+
+<div id="WorkerDialog"></div>
+
+@section Scripts{
+    <script src="~/Scripts/Worker.js"></script>
+}

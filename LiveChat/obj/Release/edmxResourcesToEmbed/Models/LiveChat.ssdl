@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LiveChatModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="LiveChatModelStoreContainer">
+    <EntitySet Name="LC_Msg" EntityType="LiveChatModel.Store.LC_Msg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LC_User" EntityType="LiveChatModel.Store.LC_User" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="LC_Msg">
+    <Key>
+      <PropertyRef Name="MsgID" />
+    </Key>
+    <Property Name="MsgID" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="MsgContent" Type="nvarchar(max)" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="10" />
+    <Property Name="PostTime" Type="smalldatetime" />
+    <Property Name="FName" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="LName" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="Status" Type="nchar" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="LC_User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="UserLevel" Type="nchar" Nullable="false" MaxLength="6" />
+    <Property Name="Dept" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nchar" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <Function Name="sp_LC_FindUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_LC_GenID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_LC_GenUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_LC_SearchActiveMsg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_LC_SearchMsg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MsgID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_LC_UserValid_CallCentre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="PassWord" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_LC_UserValidate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="PassWord" Type="nvarchar" Mode="In" />
+  </Function>
+</Schema>

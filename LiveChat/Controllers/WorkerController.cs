@@ -9,6 +9,8 @@ namespace LiveChat.Controllers
 {
     public class WorkerController : Controller
     {
+        LiveChatEntities db = new LiveChatEntities();
+
         //
         // GET: /Worker/
 
@@ -18,28 +20,49 @@ namespace LiveChat.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Index(User user)
         {
-            LC_User LCUser = new LC_User();
-
-            LCUser = user.UserValid();
-
-            if (LCUser != null)
+            if (ModelState.IsValid)
             {
-                if (LCUser.UserLevel.Trim() != "AD" && LCUser.UserLevel.Trim() != "GU")
+                List<LC_User> lcUserList = db.sp_LC_UserValid_CallCentre(user.UserName, user.Password).ToList();
+
+                if (lcUserList.Any())
                 {
-                    ModelState.AddModelError("UserLevel", "UserLevel is not allowed to accesss!");
+                    LC_User lcUser = lcUserList.First();
+
+                    string userID = lcUser.UserID;
+
+                    return RedirectToAction("Console", new { userID = userID });
+                }
+                else
+                {
+                    ModelState.AddModelError("", "UserName and Password are not matched.");
                 }
             }
 
-            if (ModelState.IsValid)
+            return View(user);
+        }
+
+        public ActionResult Console(string userID)
+        {
+            LC_User lcUser = db.sp_LC_FindUser(userID).ToList().First();
+
+            User user = new User
             {
-                return RedirectToAction("Home", "Worker", new { userID = LCUser.UserID });
-            }
-            else
-            {
-                return View(user);
-            }
+                UserID = lcUser.UserID,
+                UserName = lcUser.UserName,
+                Password = lcUser.Password,
+                UserLevel = lcUser.UserLevel,
+                Dept = lcUser.Dept,
+                Status = lcUser.Status
+            };
+
+            List<LC_Msg> msgList = db.sp_LC_SearchActiveMsg().ToList();
+
+            ViewBag.msgList = msgList;
+
+            return View(user);
         }
 
     }

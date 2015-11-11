@@ -31,13 +31,13 @@ namespace LiveChat.Models
         public DbSet<LC_Msg> LC_Msg { get; set; }
         public DbSet<LC_User> LC_User { get; set; }
     
-        public virtual ObjectResult<sp_LC_FindUser_Result> sp_LC_FindUser(string userID)
+        public virtual ObjectResult<LC_User> sp_LC_FindUser(string userID)
         {
             var userIDParameter = userID != null ?
                 new ObjectParameter("UserID", userID) :
                 new ObjectParameter("UserID", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_LC_FindUser_Result>("sp_LC_FindUser", userIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LC_User>("sp_LC_FindUser", userIDParameter);
         }
     
         public virtual ObjectResult<string> sp_LC_GenID()
@@ -50,13 +50,9 @@ namespace LiveChat.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_LC_GenUserID");
         }
     
-        public virtual ObjectResult<sp_LC_SearchActiveMsg_Result> sp_LC_SearchActiveMsg(string status)
+        public virtual ObjectResult<LC_Msg> sp_LC_SearchActiveMsg()
         {
-            var statusParameter = status != null ?
-                new ObjectParameter("Status", status) :
-                new ObjectParameter("Status", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_LC_SearchActiveMsg_Result>("sp_LC_SearchActiveMsg", statusParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LC_Msg>("sp_LC_SearchActiveMsg");
         }
     
         public virtual ObjectResult<LC_Msg> sp_LC_SearchMsg(string msgID)

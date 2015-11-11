@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LiveChatModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="LiveChatEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="LC_Msg" EntityType="LiveChatModel.LC_Msg" />
+    <EntitySet Name="LC_User" EntityType="LiveChatModel.LC_User" />
+    <FunctionImport Name="sp_LC_FindUser" EntitySet="LC_User" ReturnType="Collection(LiveChatModel.LC_User)">
+      <Parameter Name="UserID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LC_GenID" ReturnType="Collection(String)" />
+    <FunctionImport Name="sp_LC_GenUserID" ReturnType="Collection(String)" />
+    <FunctionImport Name="sp_LC_SearchActiveMsg" EntitySet="LC_Msg" ReturnType="Collection(LiveChatModel.LC_Msg)" />
+    <FunctionImport Name="sp_LC_SearchMsg" EntitySet="LC_Msg" ReturnType="Collection(LiveChatModel.LC_Msg)">
+      <Parameter Name="MsgID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LC_UserValid_CallCentre" EntitySet="LC_User" ReturnType="Collection(LiveChatModel.LC_User)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="PassWord" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LC_UserValidate" EntitySet="LC_User" ReturnType="Collection(LiveChatModel.LC_User)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="PassWord" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="LC_Msg">
+    <Key>
+      <PropertyRef Name="MsgID" />
+    </Key>
+    <Property Name="MsgID" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="MsgContent" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="UserID" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="PostTime" Type="DateTime" Precision="0" />
+    <Property Name="FName" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="LName" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="LC_User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="UserLevel" Type="String" Nullable="false" MaxLength="6" Unicode="true" FixedLength="true" />
+    <Property Name="Dept" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <ComplexType Name="sp_LC_FindUser_Result">
+    <Property Type="String" Name="UserID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="UserLevel" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="Dept" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="sp_LC_SearchActiveMsg_Result">
+    <Property Type="String" Name="MsgID" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="MsgContent" Nullable="true" />
+    <Property Type="String" Name="UserID" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="PostTime" Nullable="true" Precision="16" />
+    <Property Type="String" Name="FName" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="LName" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="sp_LC_SearchMsg_Result">
+    <Property Type="String" Name="MsgID" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="MsgContent" Nullable="true" />
+    <Property Type="String" Name="UserID" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="PostTime" Nullable="true" Precision="16" />
+    <Property Type="String" Name="FName" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="LName" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="sp_LC_UserValid_CallCentre_Result">
+    <Property Type="String" Name="UserID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="UserLevel" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="Dept" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="sp_LC_UserValidate_Result">
+    <Property Type="String" Name="UserID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="UserLevel" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="Dept" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="1" />
+  </ComplexType>
+</Schema>

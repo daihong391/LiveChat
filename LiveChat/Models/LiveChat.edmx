@@ -37,9 +37,7 @@
         </Function>
         <Function Name="sp_LC_GenID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_LC_GenUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="sp_LC_SearchActiveMsg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Status" Type="nchar" Mode="In" />
-        </Function>
+        <Function Name="sp_LC_SearchActiveMsg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_LC_SearchMsg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MsgID" Type="nvarchar" Mode="In" />
         </Function>
@@ -64,7 +62,6 @@
           <FunctionImport Name="sp_LC_GenID" ReturnType="Collection(String)" />
           <FunctionImport Name="sp_LC_GenUserID" ReturnType="Collection(String)" />
           <FunctionImport Name="sp_LC_SearchActiveMsg" EntitySet="LC_Msg" ReturnType="Collection(LiveChatModel.LC_Msg)">
-          <Parameter Name="Status" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_LC_SearchMsg" EntitySet="LC_Msg" ReturnType="Collection(LiveChatModel.LC_Msg)">
           <Parameter Name="MsgID" Mode="In" Type="String" />

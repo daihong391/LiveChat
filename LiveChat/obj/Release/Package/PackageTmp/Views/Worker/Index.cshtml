@@ -6,17 +6,33 @@
 }
 
 <div id="Worker-Login-Panel">
-    @using (Html.BeginForm())
-    {
-        @Html.ValidationSummary()
-        <p>
-            <label>Username</label>
-            @Html.TextBoxFor(m => m.UserName)
-        </p>
-        <p>
-            <label>Password</label>
-            @Html.TextBoxFor(m => m.Password)
-        </p>
-        <input type="submit" value="Login" />
-    }
+    <fieldset>
+        <legend>Login Panel</legend>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+            <div>
+                <p class="editor-label">
+                    @Html.LabelFor(m => m.UserName)
+                </p>
+                <p class="editor-field">
+                    @Html.TextBoxFor(m => m.UserName)
+                </p>
+            </div>
+            
+            <div>
+                <p class="editor-label">
+                    @Html.LabelFor(m => m.Password)
+                </p>
+                <p class="editor-field">
+                    @Html.TextBoxFor(m => m.Password)
+                </p>
+            </div>
+            
+            <input type="submit" value="Login" />
+        }
+    </fieldset>
+
 </div>

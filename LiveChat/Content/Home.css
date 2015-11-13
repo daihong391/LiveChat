@@ -105,3 +105,10 @@
     background: white;
     list-style-type: none;
 }
+
+#WorkerContent {
+    width: 100%;
+    height: 120px;
+    border: 1px solid #3498d8;
+    overflow-y: auto;
+}

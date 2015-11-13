@@ -30,6 +30,7 @@
         $($loginPage).appendTo($("#Home-Live-Chat-Panel"));
         $("#Home-Live-Chat-Panel").dialog({
             title: "Live Chat",
+            modal: true,
             dialogClass: 'no-close',
             click: function () {
                 $(this).dialog("close");

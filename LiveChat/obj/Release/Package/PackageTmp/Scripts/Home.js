@@ -30,6 +30,7 @@
         $($loginPage).appendTo($("#Home-Live-Chat-Panel"));
         $("#Home-Live-Chat-Panel").dialog({
             title: "Live Chat",
+            modal: true,
             dialogClass: 'no-close',
             click: function () {
                 $(this).dialog("close");
@@ -64,7 +65,7 @@
             }
         });
 
-        setInterval("updateContent($('input[name=\"MsgID\"]').val())", 3000);
+        var dialogUpInterval = setInterval("updateContent($('input[name=\"MsgID\"]').val())", 3000);
 
         $("#Home-Live-Chat-Panel").dialog({
             beforeClose: function (event, ui) {
@@ -73,6 +74,7 @@
                     url: "/Home/AppMsg",
                     data: { msgID: msgID, fName: fName, msgContent: "Agent has left." }
                 });
+                clearInterval(dialogUpInterval);
             }
         });
     });

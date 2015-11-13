@@ -65,5 +65,33 @@ namespace LiveChat.Controllers
             return View(user);
         }
 
+        public JsonResult AppMsg()
+        {
+            string msgID = Request.Params["msgID"];
+            string fName = Request.Params["fName"];
+            string msgContent = "<li>" + fName + ": " + Request.Params["msgContent"] + "</li>";
+
+            LC_Msg lcMsg = db.sp_LC_SearchMsg(msgID).First();
+            lcMsg.UserID = Request.Params["userID"];
+            lcMsg.MsgContent += msgContent;
+            db.SaveChanges();
+
+            Message msg = new Message();
+            msg.MsgID = lcMsg.MsgID;
+            msg.MsgContent = lcMsg.MsgContent;
+            msg.UserID = lcMsg.UserID;
+            msg.PostTime = lcMsg.PostTime.ToString();
+            msg.FName = lcMsg.FName;
+            msg.LName = lcMsg.LName;
+            msg.Status = lcMsg.Status;
+
+            return Json(new { msg = msg }, JsonRequestBehavior.DenyGet);
+        }
+
+        public JsonResult MsgUp(string msgID)
+        {
+            return Json(new { });
+        }
+
     }
 }

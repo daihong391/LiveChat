@@ -13,20 +13,24 @@ As this is not a big project, I adopt two tables and some store procedures for t
 
     Column  | Type | Null | Key
     --- | --- | --- | ---
-    UserID  | nvarchar(20) | Not Null | Primary Key
-    UserName  | nvarchar(20) | Not Null |
+    UserID  | nvarchar(10) | Not Null | Primary Key
+    UserName  | nvarchar(30) | Not Null |
     Password  | nvarchar(20) | Not Null |
-    UserLevel  | nvarchar(20) | Not Null |
-    EnterBy  | nvarchar(20) | Not Null |
-    EnterDate  | nvarchar(20) | Not Null |
-    ModifyBy  | nvarchar(20) | Not Null |
-    ModifyDate  | nvarchar(20) | Not Null |
+    UserLevel  | nchar(6) | Not Null |
+    Dept  | nvarchar(50) | Null |
+    Status  | nchar(1) | Not Null |
 
 * **Message**
 
     Column  | Type | Null | Key
     --- | --- | --- | ---
     MsgID  | nvarchar(20) | Not Null | Primary Key
+    MsgContent  | nvarchar(max) | Null |
+    UserID  | nvarchar(10) | Null |
+    PostTime  | smalldatetime | Null |
+    FName  | nvarchar(30) | Not Null |
+    LName  | nvarchar(30) | Not Null |
+    Status  | nchar(1) | Not Null |
 
 ### Store Procedures
 

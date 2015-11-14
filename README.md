@@ -34,6 +34,34 @@ As this is not a big project, I adopt two tables and some store procedures for t
 
 ### Store Procedures
 
+* **sp_LC_FindUser**
+    
+ Find User by UserID
+
+* **sp_LC_GenID**
+
+ Generate a new Message ID by comparing the messages of the database
+ 
+* **sp_LC_GenUserID**
+
+ Generate a new User ID by comparing the userID of the database
+ 
+* **sp_LC_SearchActiveMsg**
+
+ Search all active messages of the database
+
+* **sp_LC_SearchMsg**
+
+ Search the message according to the msgID
+
+* **sp_LC_UserValid_CallCentre**
+
+ Validate the UserName and Password for Worker Console, and return the user information if user validated
+
+* **sp_LC_UserValidate**
+
+ Validate the UserName and Password for Admin Console
+
 ---
 ## Front End
 There are three parts are applied to this project: **User site**, **Help Desk work site**, and **Admin site**.

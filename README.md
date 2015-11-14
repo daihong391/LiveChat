@@ -68,6 +68,49 @@ you will be redirected to Live Chat Panel
 
 ### Help Desk work site(Worker Site)
 
+* **Admin Account for Testing**
+
+    I have created an admin account for testing:
+    
+        * Username: Henry
+        * Password: 111111
+
+* **Worker Console Page**
+    
+    Click this word [Worker Console](http://livechathenry.azurewebsites.net/Worker) to 
+enter the Worker Console Page
+
+    ![Worker Console Login](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/WorkerPage/WorkerLoginPanel.png)
+    
+* **Worker Login Page**
+    
+    * If forgetting to enter the Username or Password, it will bw shown
+    
+    ![LoginFail](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/WorkerPage/WorkerLoginFailed1.png)
+
+    * Else Username and Password are both not matched
+    
+    ![LoginFail](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/WorkerPage/WorkerLoginFailed2.png)
+    
+    * When entering the correct Username and Password, you can enter the worker 
+console page
+
+* **Console Page**
+
+    ![Worker Console Page](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/WorkerPage/WorkerConsole.png)
+
+    * Clicking Index Button ![Index Button](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/WorkerPage/WorkerConsoleIndex.png), you can return to the Login Page.
+    
+    * All active messages will be shown there
+    
+    ![Message Area](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/WorkerPage/WorkerMsgList.png)
+    
+    * When clicking each message, the Live Chat panel will pop up
+    
+    ![Worker Live Chat](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/WorkerPage/WorkerLiveChat.png)
+    
+    And every three seconds, the message content will be refreshed.
+
 ### Admin Site
 
 ---

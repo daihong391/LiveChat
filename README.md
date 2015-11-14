@@ -33,11 +33,17 @@ As this is not a big project, I adopt two tables and some store procedures for t
 ---
 ## Front End
 There are three parts are applied to this project: **User site**, **Help Desk work site**, and **Admin site**.
-### User site
+### User Site
+* **User Website**
 
-### Help Desk work site
+    Click this word [User Website](http://livechathenry.azurewebsites.net/) to enter the website as belowing:
+    
 
-### Admin site
+* **Username Login Page**
+
+### Help Desk work site(Worker Site)
+
+### Admin Site
 
 ---
 ## Instructions

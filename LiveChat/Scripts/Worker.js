@@ -11,7 +11,18 @@
         $("#WorkerDialog").dialog("open");
         $("input[name=MsgID]").val($(this).text());
 
-        //var dialogUpInterval = setInterval("updateContent($('input[name=\"MsgID\"]').val())", 3000);
+        var dialogUpInterval = setInterval("updateContent($('input[name=\"MsgID\"]').val())", 3000);
+
+        $("#WorkerDialog").dialog({
+            beforeClose: function (event, ui) {
+                $.ajax({
+                    type: "Post",
+                    url: "/Worker/AppMsg",
+                    data: { msgID: $("input[name=MsgID]").val(), fName: $("#Worker-AgentName").text(), msgContent: "Dialog has been finished." }
+                });
+                clearInterval(dialogUpInterval);
+            }
+        });
     });
 
     $(document).on('click', '#MsgSend', function () {
@@ -29,15 +40,35 @@
                 $("input[name='Worker-Msg-Content']").val("");
             }
         });
+
     });
+
+    setInterval("upMsg()", 3000);
 });
 
 function updateContent(msgID) {
-    $("#WorkerMsgs").empty();
-
     $.ajax({
         type: "Post",
         url: "/Worker/MsgUp",
-        data: { msgId: msgID},
+        data: { msgId: msgID },
+        success: function (data) {
+            var msgContent = data.msgContent;
+            $("#WorkerMsgs").empty();
+            $("#WorkerMsgs").append(msgContent);
+        }
+    });
+}
+
+function upMsg() {
+    $.ajax({
+        type: "Post",
+        url: "/Worker/MsgListShow",
+        success: function (data) {
+            var msgArray = data.msgArray;
+            $("#MsgList ul").empty();
+            for (var i = 0; i < msgArray.length; i++) {
+                $("#MsgList ul").append('<li class="ActMsg">' + msgArray[i] + '</li>');
+            }
+        }
     });
 }

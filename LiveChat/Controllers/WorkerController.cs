@@ -72,6 +72,10 @@ namespace LiveChat.Controllers
             string msgContent = "<li>" + fName + ": " + Request.Params["msgContent"] + "</li>";
 
             LC_Msg lcMsg = db.sp_LC_SearchMsg(msgID).First();
+            if ((Request.Params["msgContent"].Trim()).Equals("Dialog has been finished."))
+            {
+                lcMsg.Status = "F";
+            }
             lcMsg.UserID = Request.Params["userID"];
             lcMsg.MsgContent += msgContent;
             db.SaveChanges();
@@ -90,7 +94,32 @@ namespace LiveChat.Controllers
 
         public JsonResult MsgUp(string msgID)
         {
-            return Json(new { });
+            LC_Msg lcMsg = db.sp_LC_SearchMsg(msgID).First();
+            string msgContent = "";
+
+            msgContent = lcMsg.MsgContent;
+
+            return Json(new { msgContent = msgContent }, JsonRequestBehavior.DenyGet);
+        }
+
+        public JsonResult MsgListShow()
+        {
+            List<LC_Msg> msgList = db.sp_LC_SearchActiveMsg().ToList();
+
+            List<String> msgArray = new List<string>();
+
+            foreach (var msg in msgList)
+            {
+                msgArray.Add(msg.MsgID);
+            }
+
+            return Json(new { msgArray = msgArray });
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            db.Dispose();
+            base.Dispose(disposing);
         }
 
     }

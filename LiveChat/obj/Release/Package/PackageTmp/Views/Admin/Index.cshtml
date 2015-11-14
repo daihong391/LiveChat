@@ -1,0 +1,34 @@
+﻿@model LiveChat.Models.User
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="AdminLoginPanel">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        <div>
+            <span class="editor-label">
+                @Html.LabelFor(m => m.UserName)
+            </span>
+            <span class="editor-field">
+                @Html.TextBoxFor(m => m.UserName)
+            </span>
+        </div>
+        <div>
+            <span class="editor-label">
+                @Html.LabelFor(m => m.Password)
+            </span>
+            <span class="editor-field">
+                @Html.TextBoxFor(m => m.Password)
+            </span>
+        </div>
+        <div>
+            <input type="submit" value="Login" />
+            <input type="button" value="Cancel" />
+        </div>
+    }
+</div>

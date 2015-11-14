@@ -25,7 +25,8 @@ namespace LiveChat
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/site.css",
-                        "~/Content/jquery-ui.css"));
+                        "~/Content/jquery-ui.css",
+                        "~/Content/Admin.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",

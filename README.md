@@ -38,33 +38,33 @@ There are three parts are applied to this project: **User site**, **Help Desk wo
 
     Click this word [User Website](http://livechathenry.azurewebsites.net/) to enter the website as belowing:
     
-    ![UserPage](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/UserPage.png)
+    ![UserPage](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/UserPage/UserPage.png)
 
 * **Username Login Page**
     
-    * After clicking this button ![LiveChatButton](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/UserLiveChatButton.png), there will be a panel for user to
+    * After clicking this button ![LiveChatButton](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/UserPage/UserLiveChatButton.png), there will be a panel for user to
 enter the first name and last name, such as the following Panel.
 
-    ![UserNamePanel](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/UserNamePanel.png)
+    ![UserNamePanel](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/UserPage/UserNamePanel.png)
     
     * Both First Name and Last Name are required, or it will be shown as following
     
-    ![UerLoginFail](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/FailLoginPanel.png)
+    ![UerLoginFail](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/UserPage/FailLoginPanel.png)
     
     * After entering both First Name and Last Name, and clicking Submit button,
 you will be redirected to Live Chat Panel
     
-    ![Msg Content](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/UserChatPanel.png)
+    ![Msg Content](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/UserPage/UserChatPanel.png)
     
     * In this page, you can talk with the worker. 
         * In this bar, you can send message in the text area
-        ![Msg Sender](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/MsgSend.png)
+        ![Msg Sender](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/UserPage/MsgSend.png)
         
         * All messages will be shown here
         
-        ![Msg Panel](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/MsgPanel.png)
+        ![Msg Panel](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/UserPage/MsgPanel.png)
         
-		* Clicking the "Close" Button, this dialog will be closed, and the message will not be shown in Worker Console.
+        * Clicking the "Close" Button, this dialog will be closed, and the message will not be shown in Worker Console.
 
 ### Help Desk work site(Worker Site)
 

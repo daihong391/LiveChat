@@ -64,7 +64,7 @@ you will be redirected to Live Chat Panel
         
         ![Msg Panel](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/MsgPanel.png)
         
-    * Clicking the "Close" Button, this dialog will be closed, and the message will not be shown in Worker Console.
+		* Clicking the "Close" Button, this dialog will be closed, and the message will not be shown in Worker Console.
 
 ### Help Desk work site(Worker Site)
 

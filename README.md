@@ -61,7 +61,10 @@ you will be redirected to Live Chat Panel
         ![Msg Sender](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/MsgSend.png)
         
         * All messages will be shown here
+        
         ![Msg Panel](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/MsgPanel.png)
+        
+    * Clicking the "Close" Button, this dialog will be closed, and the message will not be shown in Worker Console.
 
 ### Help Desk work site(Worker Site)
 

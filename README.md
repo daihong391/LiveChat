@@ -68,7 +68,7 @@ There are three parts are applied to this project: **User site**, **Help Desk wo
 ### User Site
 * **User Website**
 
-    Click this word [User Website](http://livechathenry.azurewebsites.net/) to enter the website as belowing:
+    Click this word [User Website](http://livechathd.azurewebsites.net/) to enter the website as belowing:
     
     ![UserPage](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/UserPage/UserPage.png)
 
@@ -109,7 +109,7 @@ you will be redirected to Live Chat Panel
 
 * **Worker Console Page**
     
-    Click this word [Worker Console](http://livechathenry.azurewebsites.net/Worker) to 
+    Click this word [Worker Console](http://livechathd.azurewebsites.net/Worker) to 
 enter the Worker Console Page
 
     ![Worker Console Login](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/WorkerPage/WorkerLoginPanel.png)
@@ -173,8 +173,8 @@ console page
 ---
 ## Instructions
 
- * Clicking [User Website](http://livechathenry.azurewebsites.net/) to enter User Site.
- * Clicking [Worker Login](http://livechathenry.azurewebsites.net/Worker) to enter the login page of Worker Site, and Entering the
+ * Clicking [User Website](http://livechathd.azurewebsites.net/) to enter User Site.
+ * Clicking [Worker Login](http://livechathd.azurewebsites.net/Worker) to enter the login page of Worker Site, and Entering the
 Username: Henry and Password: 111111
  * By clicking "Live Chat" button in the following image,
 ![LiveChat Button](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/Instruct/Instruct1.png)
@@ -199,7 +199,7 @@ in 3 seconds.
 ---
 ## Demos
 
- * [User Website](http://livechathenry.azurewebsites.net/)
- * [Worker Login](http://livechathenry.azurewebsites.net/Worker)
+ * [User Website](http://livechathd.azurewebsites.net/)
+ * [Worker Login](http://livechathd.azurewebsites.net/Worker)
  * [Admin Page](http://livechathd.azurewebsites.net/Admin)
 

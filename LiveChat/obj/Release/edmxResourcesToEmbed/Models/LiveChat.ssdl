@@ -23,7 +23,7 @@
     <Property Name="UserID" Type="nvarchar" Nullable="false" MaxLength="10" />
     <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="30" />
     <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="20" />
-    <Property Name="UserLevel" Type="nchar" Nullable="false" MaxLength="6" />
+    <Property Name="UserLevel" Type="nchar" MaxLength="2" />
     <Property Name="Dept" Type="nvarchar" MaxLength="50" />
     <Property Name="Status" Type="nchar" Nullable="false" MaxLength="1" />
   </EntityType>

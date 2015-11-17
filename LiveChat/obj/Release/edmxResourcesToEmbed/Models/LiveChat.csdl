@@ -12,11 +12,11 @@
     <FunctionImport Name="sp_LC_SearchMsg" EntitySet="LC_Msg" ReturnType="Collection(LiveChatModel.LC_Msg)">
       <Parameter Name="MsgID" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="sp_LC_UserValid_CallCentre" EntitySet="LC_User" ReturnType="Collection(LiveChatModel.LC_User)">
+    <FunctionImport Name="sp_LC_UserValidate" EntitySet="LC_User" ReturnType="Collection(LiveChatModel.LC_User)">
       <Parameter Name="UserName" Mode="In" Type="String" />
       <Parameter Name="PassWord" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="sp_LC_UserValidate" EntitySet="LC_User" ReturnType="Collection(LiveChatModel.LC_User)">
+    <FunctionImport Name="sp_LC_UserValid_CallCentre" EntitySet="LC_User" ReturnType="Collection(LiveChatModel.LC_User)">
       <Parameter Name="UserName" Mode="In" Type="String" />
       <Parameter Name="PassWord" Mode="In" Type="String" />
     </FunctionImport>
@@ -40,7 +40,7 @@
     <Property Name="UserID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
     <Property Name="UserName" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
     <Property Name="Password" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
-    <Property Name="UserLevel" Type="String" Nullable="false" MaxLength="6" Unicode="true" FixedLength="true" />
+    <Property Name="UserLevel" Type="String" MaxLength="2" Unicode="true" FixedLength="true" />
     <Property Name="Dept" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="Status" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="true" />
   </EntityType>
@@ -70,7 +70,7 @@
     <Property Type="String" Name="LName" Nullable="false" MaxLength="30" />
     <Property Type="String" Name="Status" Nullable="false" MaxLength="1" />
   </ComplexType>
-  <ComplexType Name="sp_LC_UserValid_CallCentre_Result">
+  <ComplexType Name="sp_LC_UserValidate_Result">
     <Property Type="String" Name="UserID" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="UserName" Nullable="false" MaxLength="30" />
     <Property Type="String" Name="Password" Nullable="false" MaxLength="20" />
@@ -78,7 +78,7 @@
     <Property Type="String" Name="Dept" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="Status" Nullable="false" MaxLength="1" />
   </ComplexType>
-  <ComplexType Name="sp_LC_UserValidate_Result">
+  <ComplexType Name="sp_LC_UserValid_CallCentre_Result">
     <Property Type="String" Name="UserID" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="UserName" Nullable="false" MaxLength="30" />
     <Property Type="String" Name="Password" Nullable="false" MaxLength="20" />

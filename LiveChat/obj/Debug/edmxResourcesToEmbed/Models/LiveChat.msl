@@ -31,7 +31,7 @@
     <FunctionImportMapping FunctionImportName="sp_LC_GenUserID" FunctionName="LiveChatModel.Store.sp_LC_GenUserID" />
     <FunctionImportMapping FunctionImportName="sp_LC_SearchActiveMsg" FunctionName="LiveChatModel.Store.sp_LC_SearchActiveMsg" />
     <FunctionImportMapping FunctionImportName="sp_LC_SearchMsg" FunctionName="LiveChatModel.Store.sp_LC_SearchMsg" />
-    <FunctionImportMapping FunctionImportName="sp_LC_UserValid_CallCentre" FunctionName="LiveChatModel.Store.sp_LC_UserValid_CallCentre" />
     <FunctionImportMapping FunctionImportName="sp_LC_UserValidate" FunctionName="LiveChatModel.Store.sp_LC_UserValidate" />
+    <FunctionImportMapping FunctionImportName="sp_LC_UserValid_CallCentre" FunctionName="LiveChatModel.Store.sp_LC_UserValid_CallCentre" />
   </EntityContainerMapping>
 </Mapping>

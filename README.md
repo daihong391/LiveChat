@@ -145,9 +145,61 @@ console page
 
 ### Admin Site
 
+   [Admin Page](http://livechathd.azurewebsites.net/Admin) will direct you to the Login Page of Admin Site of this project.
+   
+   ![Admin Login](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/AdminPage/Login.png)
+
+   We can still use this same userID and Password to login:
+   
+    * UserID: Henry
+    * Password: 111111
+
+   and the user can login if the UserLevel is Administer.
+    
+   This admin site mainly include s two parts:
+   
+    * AccountList
+     
+![AccountList](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/AdminPage/Account.png)
+    
+    * MessageList
+    
+![MessageList](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/AdminPage/Message.png)
+    
+   If want to modify account, you can go to this site:
+   
+![AccountEdit](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/AdminPage/AccountEdit.png)
+    
 ---
 ## Instructions
 
+ * Clicking [User Website](http://livechathenry.azurewebsites.net/) to enter User Site.
+ * Clicking [Worker Login](http://livechathenry.azurewebsites.net/Worker) to enter the login page of Worker Site, and Entering the
+Username: Henry and Password: 111111
+ * By clicking "Live Chat" button in the following image,
+![LiveChat Button](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/Instruct/Instruct1.png)
+ 
+the Username Signin page will pop up.
+![Signin Page](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/Instruct/Instruct2.png)
+
+ * After entering both First Name and Last Name, the new message ID will appears in Worker Console's message list.
+![Message List](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/Instruct/Instruct3.png)
+
+ * By clicking any message of the message list in the Worker Console, the LiveChat Panel will appear.
+![Worker LiveChat](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/Instruct/Instruct4.png)
+
+ * Then entering message and send in each side (user site or worker console), other side will appear the inputed message
+in 3 seconds.
+![MessageSynmetric](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/Instruct/Instruct5.png)
+
+ * And no matter user leaving or worker leaving, the dialog will be finished.
+![Agent Leaving](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/Instruct/Instruct6.png)
+![Worker Leaving](https://raw.githubusercontent.com/daihong391/LiveChat/master/LiveChat/Images/Instruct/Instruct7.png)
+
 ---
 ## Demos
+
+ * [User Website](http://livechathenry.azurewebsites.net/)
+ * [Worker Login](http://livechathenry.azurewebsites.net/Worker)
+ * [Admin Page](http://livechathd.azurewebsites.net/Admin)
 

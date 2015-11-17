@@ -17,7 +17,7 @@
             beforeClose: function (event, ui) {
                 $.ajax({
                     type: "Post",
-                    url: "/Worker/AppMsg",
+                    url: "/Worker/AppMsg?userID="+userID,
                     data: { msgID: $("input[name=MsgID]").val(), fName: $("#Worker-AgentName").text(), msgContent: "Dialog has been finished." }
                 });
                 clearInterval(dialogUpInterval);
@@ -32,7 +32,7 @@
         $.ajax({
             type: "Post",
             url: "/Worker/AppMsg",
-            data: { msgID: msgID, fName: fName, msgContent: msgContent, userID: userID },
+            data: { msgID: msgID, fName: fName, msgContent: msgContent, userID: $("input[name=UserID]").val() },
             success: function (data) {
                 $("#WorkerMsgs").empty();
                 var msg = data.msg;

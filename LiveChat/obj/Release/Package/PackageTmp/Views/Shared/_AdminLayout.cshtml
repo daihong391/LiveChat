@@ -15,6 +15,20 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
+    <script src="~/Scripts/jquery.selectBoxIt.js"></script>
     @RenderSection("scripts", required: false)
+    <footer>
+        <div>
+            <div>
+                <p>&copy; @DateTime.Now.Year - Hong Dai Website</p>
+            </div>
+            <div>
+                <ul>
+                    <li><a target="_blank" href="http://ca.linkedin.com/in/HongDai">LinkedIn</a></li>
+                    <li><a target="_blank" href="https://github.com/daihong391/LiveChat.git">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

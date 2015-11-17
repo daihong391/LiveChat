@@ -1,0 +1,23 @@
+﻿@model LiveChat.Models.User
+
+@{
+    ViewBag.Title = "Console";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div id="Admin-Head">Admin Console</div>
+<a href="@Url.Action("Index")">Logout</a>
+
+<input id="userID" type="text" value="@Model.UserID" hidden />
+
+<div id="Admin-Tabs">
+    <ul>
+        <li>@Html.ActionLink("Account", "Account", new { userID = Model.UserID })</li>
+        <li>@Html.ActionLink("Message", "Message", new { userID = Model.UserID })</li>
+    </ul>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+    <script src="~/Scripts/DataTables/fnReloadAjax.js"></script>
+    <script src="~/Scripts/Admin.js"></script>
+}

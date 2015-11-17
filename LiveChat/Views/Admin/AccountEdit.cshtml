@@ -1,0 +1,122 @@
+﻿@model LiveChat.Models.User
+
+@{
+    ViewBag.Title = "AccountEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    string userID = ViewBag.userID;
+}
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>AccountEdit</legend>
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+        <input type="text" name="loginID" value="@userID" hidden />
+
+        @Html.HiddenFor(m => m.UserID)
+        <p>
+            <span class="editor-label">
+                @Html.LabelFor(m => m.UserName)
+            </span>
+            <span class="editor-field">
+                @Html.TextBoxFor(m => m.UserName)
+            </span>
+        </p>
+
+        <p>
+            <span class="editor-label">
+                @Html.LabelFor(m => m.Password)
+            </span>
+            <span class="editor-field">
+                @Html.TextBoxFor(m => m.Password)
+            </span>
+        </p>
+
+        <p>
+            <span class="editor-label">
+                @Html.LabelFor(m => m.UserLevel)
+            </span>
+            <span class="editor-field">
+                @{
+                    string userLevel = Model.UserLevel;
+                    if (userLevel != null)
+                    {
+                        userLevel = userLevel.Trim();
+                        if (userLevel.Equals("AD"))
+                        {
+                            <select name="UserLevel">
+                                <option value="AD" selected>Administer</option>
+                                <option value="GU">Worker</option>
+                            </select>
+                        }
+                        else if (userLevel.Equals("GU"))
+                        {
+                            <select name="UserLevel">
+                                <option value="AD">Administer</option>
+                                <option value="GU" selected>Worker</option>
+                            </select>
+                        }
+                    }
+                    else{
+                        <select name="UserLevel">
+                            <option value="AD">Administer</option>
+                            <option value="GU">Worker</option>
+                        </select>
+                    }
+                }
+            </span>
+        </p>
+
+        <p>
+            <span class="editor-label">
+                @Html.LabelFor(m => m.Dept)
+            </span>
+            <span class="editor-field">
+                @Html.TextBoxFor(m => m.Dept)
+            </span>
+        </p>
+
+        <p>
+            <span class="editor-label">
+                @Html.LabelFor(m => m.Status)
+            </span>
+            <span class="editor-field">
+                @{
+                    string status = Model.Status;
+                    if (status != null)
+                    {
+                        status = status.Trim();
+                        if (status.Equals("A"))
+                        {
+                            <select name="Status">
+                                <option value="A" selected>Active</option>
+                                <option value="P">Inactive</option>
+                            </select>
+                        }
+                        else if (status.Equals("P"))
+                        {
+                            <select name="Status">
+                                <option value="A">Active</option>
+                                <option value="P" selected>Inactive</option>
+                            </select>
+                        }
+                    }
+                    else
+                    {
+                        <select name="Status">
+                            <option value="A">Active</option>
+                            <option value="P">Inactive</option>
+                        </select>
+                    }
+                }
+            </span>
+        </p>
+
+        <p>
+            <input type="submit" value="Submit" />
+            <a href="@Url.Action("Console", "Admin", new { userID = userID })">Cancel</a>
+        </p>
+    </fieldset>
+}

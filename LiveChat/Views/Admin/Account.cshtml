@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Account";
+    Layout = null;
+    string userID = ViewBag.userID;
+}
+
+<table id="AccountTables" class="display"  cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>UserID</th>
+            <th>UserName</th>
+            <th>Password</th>
+            <th>UserLevel</th>
+            <th>Dept</th>
+            <th>Status</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+</table>
+<a href="@Url.Action("AccountEdit", "Admin", new { userID = userID, accountID = "" })">Create</a>
+
+<script src="~/Scripts/Account.js"></script>
